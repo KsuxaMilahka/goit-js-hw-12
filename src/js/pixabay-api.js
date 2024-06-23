@@ -21,11 +21,6 @@ export async function fetchImages(query, page, perPage) {
     const response = await axios.get(url, {params});
     const data = response.data;
 
-    // if (!response.ok) {
-    //   throw new Error('Network response was not ok');
-    // }
-    
-  
     if (data.hits.length === 0) {
       throw new Error('No images found');
     }

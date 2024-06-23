@@ -222,3 +222,13 @@ body {
     color: #fff;
     margin-top: 32px;
 }
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.active {
+    display: none;
+    opacity: 0;
+}
