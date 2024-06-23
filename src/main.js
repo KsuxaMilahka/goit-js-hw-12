@@ -20,7 +20,7 @@ form.addEventListener('submit', async (e) => {
 
   if (query === '') {
     showError('Please enter a search query.');
-    
+     hideLoadMore(btnLoadMore);
     return;
   }
 
@@ -47,7 +47,7 @@ form.addEventListener('submit', async (e) => {
         showError('Sorry, there are no images matching your search query. Please try again!');
       return;
     };
-    
+    showLoadMore(btnLoadMore);
     renderImageGallery(data.hits);
     
     } catch (error) {
@@ -55,7 +55,7 @@ form.addEventListener('submit', async (e) => {
       showError('Something went wrong. Please try again later.');
   } finally {
     hideLoader(loader);
-    updateBtnStatus(page, maxPage, btnLoadMore);
+    
     }
   
   form.reset();
